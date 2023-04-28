@@ -9,17 +9,17 @@ import org.springframework.data.cassandra.core.mapping.Table;
 
 @Table("children")
 public class Children {
-    @PrimaryKeyColumn(name="group_name",ordinal=0,type=PrimaryKeyType.PARTITIONED)
+    @PrimaryKeyColumn(name="second_name",ordinal=0,type=PrimaryKeyType.PARTITIONED)
+    private String secondName;
+
+    @PrimaryKeyColumn(name="first_name",ordinal=0,type=PrimaryKeyType.CLUSTERED,ordering = Ordering.ASCENDING)
+    private String firstName;
+
+    @PrimaryKeyColumn(name="group_name",ordinal=0,type=PrimaryKeyType.CLUSTERED,ordering = Ordering.ASCENDING)
     private String groupName;
 
-    @PrimaryKeyColumn(name="age",ordinal=0,type=PrimaryKeyType.CLUSTERED,ordering = Ordering.ASCENDING)
+    @Column("age")
     private Integer age;
-
-    @PrimaryKeyColumn(name="child_name",ordinal=0,type=PrimaryKeyType.CLUSTERED,ordering = Ordering.ASCENDING)
-    private String childName;
-
-    @Column("second_name")
-    private String secondName;
 
     public String getGroupName() {
         return groupName;
@@ -37,12 +37,12 @@ public class Children {
         this.age = age;
     }
 
-    public String getChildName() {
-        return childName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setChildName(String childName) {
-        this.childName = childName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getSecondName() {
