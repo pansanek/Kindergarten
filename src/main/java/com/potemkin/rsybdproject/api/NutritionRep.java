@@ -9,5 +9,5 @@ public interface NutritionRep extends CassandraRepository<Nutrition,Integer>{
     
 
     @AllowFiltering
-    public Nutrition findByName(String dayOfWeek);
+    public Nutrition findByDayOfWeek(String dayOfWeek);
 }

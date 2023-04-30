@@ -36,7 +36,7 @@ public class GroupsController {
 
     @GetMapping("/delete-groups")
     public Group deleteGroup(@RequestParam(name="groupName") String groupName){
-        Group group = repo.findByName(groupName);
+        Group group = repo.findByGroupName(groupName);
         repo.delete(group);
         return group;
     }

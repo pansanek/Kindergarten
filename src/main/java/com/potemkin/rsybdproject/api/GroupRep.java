@@ -9,5 +9,5 @@ public interface GroupRep extends CassandraRepository<Group,Integer>{
     
 
     @AllowFiltering
-    public Group findByName(String groupName);
+    public Group findByGroupName(String groupName);
 }

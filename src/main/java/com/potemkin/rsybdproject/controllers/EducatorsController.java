@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,26 +23,22 @@ public class EducatorsController {
 
     @GetMapping("/all-educators")
     public List<Educators> getAll(){
-        List<Educators> children = (List<Educators>) repo.findAll();
-        return children;
+        List<Educators> educators = (List<Educators>) repo.findAll();
+        return educators;
     }
     
     @PostMapping("/upload-educators")
-    public Educators uploadEducators(@RequestBody Educators children){
-        repo.save(children);
-        return children;
+    public Educators uploadEducators(@RequestBody Educators educators){
+        repo.save(educators);
+        return educators;
 
     }
 
     @GetMapping("/delete-educators")
-    public Educators deleteEducator(@RequestParam(name="firstName") String firstName, @RequestParam(name="age") Integer age){
-        Educators children = repo.findEducatorsByFirstNameAndAge(firstName, age);
-        repo.delete(children);
-        return children;
+    public Educators deleteEducator(@RequestParam(name="secondName") String secondName){
+        Educators educators = repo.findEducatorsBySecondName(secondName);
+        repo.delete(educators);
+        return educators;
     }
     
-    @GetMapping("/get-by-age/{age}")
-    public List<Educators> getAgedEducators(@PathVariable("age") Integer age){
-        return (List<Educators>) repo.findByAge(age);
-    }
 }

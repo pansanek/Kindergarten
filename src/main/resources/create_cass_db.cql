@@ -20,8 +20,6 @@ CREATE TABLE IF NOT EXISTS educators (
   PRIMARY KEY (second_name)
 );
 
-
-
 CREATE TABLE nutrition (
   day_of_week text,
   breakfast list<text> ,
@@ -31,6 +29,14 @@ CREATE TABLE nutrition (
   PRIMARY KEY (day_of_week)
 );
 
+CREATE TABLE parents (
+parent_id int PRIMARY KEY,
+first_name text,
+last_name text,
+email text,
+phone int,
+work_place text
+);
 
 //CREATE TABLE IF NOT EXISTS kindergarten.children (
   child_name text,

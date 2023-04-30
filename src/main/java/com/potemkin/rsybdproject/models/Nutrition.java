@@ -1,6 +1,7 @@
 package com.potemkin.rsybdproject.models;
 
-import java.util.Collection;
+
+import java.util.List;
 
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
 import org.springframework.data.cassandra.core.mapping.Column;
@@ -13,16 +14,16 @@ public class Nutrition {
     private String dayOfWeek;
 
     @Column("breakfast")
-    private Collection<String> Breakfast;
+    private List<String> Breakfast;
 
     @Column("lunch")
-    private Collection<String> Lunch;
+    private List<String> Lunch;
 
     @Column("snack")
-    private Collection<String> Snack;
+    private List<String> Snack;
     
     @Column("dinner")
-    private Collection<String> Dinner;
+    private List<String> Dinner;
 
     public String getDayOfWeek() {
         return dayOfWeek;
@@ -32,35 +33,35 @@ public class Nutrition {
         this.dayOfWeek = dayOfWeek;
     }
 
-    public Collection<String> getBreakfast() {
+    public List<String> getBreakfast() {
         return Breakfast;
     }
 
-    public void setBreakfast(Collection<String> breakfast) {
+    public void setBreakfast(List<String> breakfast) {
         Breakfast = breakfast;
     }
 
-    public Collection<String> getLunch() {
+    public List<String> getLunch() {
         return Lunch;
     }
 
-    public void setLunch(Collection<String> lunch) {
+    public void setLunch(List<String> lunch) {
         Lunch = lunch;
     }
 
-    public Collection<String> getSnack() {
+    public List<String> getSnack() {
         return Snack;
     }
 
-    public void setSnack(Collection<String> snack) {
+    public void setSnack(List<String> snack) {
         Snack = snack;
     }
 
-    public Collection<String> getDinner() {
+    public List<String> getDinner() {
         return Dinner;
     }
 
-    public void setDinner(Collection<String> dinner) {
+    public void setDinner(List<String> dinner) {
         Dinner = dinner;
     }
 
