@@ -10,4 +10,5 @@ public interface ParentsRep extends CassandraRepository<Parents,Integer>{
 
     @AllowFiltering
     public Parents findByParentId(String parentId);
+    
 }

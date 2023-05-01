@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,5 +40,10 @@ public class GroupsController {
         Group group = repo.findByGroupName(groupName);
         repo.delete(group);
         return group;
+    }
+
+    @GetMapping("/get-by-number/{num}")
+    public List<Group> getNumberOfChildren(@PathVariable("num") Integer numberOfChildren){
+        return (List<Group>) repo.findByNumberOfChildren(numberOfChildren);
     }
 }

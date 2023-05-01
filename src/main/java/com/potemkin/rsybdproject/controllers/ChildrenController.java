@@ -36,14 +36,14 @@ public class ChildrenController {
     }
 
     @GetMapping("/delete-children")
-    public Children deleteChild(@RequestParam(name="firstName") String firstName, @RequestParam(name="age") Integer age){
-        Children children = repo.findChildrenByFirstNameAndAge(firstName, age);
+    public Children deleteChild(@RequestParam(name="secondName") String secondName){
+        Children children = repo.findChildrenBySecondName(secondName);
         repo.delete(children);
         return children;
     }
     
     @GetMapping("/get-by-age/{age}")
-    public List<Children> getAgedChildren(@PathVariable("age") Integer age){
+    public List<Children> getAgeChildren(@PathVariable("age") Integer age){
         return (List<Children>) repo.findByAge(age);
     }
 }

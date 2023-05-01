@@ -10,7 +10,7 @@ public interface ChildrenRep extends CassandraRepository<Children,Integer>{
     
 
     @AllowFiltering
-    public Children findChildrenByFirstNameAndAge(String firstName,Integer age);
+    public Children findChildrenBySecondName(String SecondName);
 
 
     @AllowFiltering
